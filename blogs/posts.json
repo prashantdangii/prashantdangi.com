@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "idor-that-leaked-every-invoice",
+    "title": "The IDOR that leaked every invoice in a fintech app",
+    "date": "2026-07-28",
+    "tags": "web · idor",
+    "summary": "A single predictable ID exposed every customer's invoices. How I found it, and how they fixed it."
+  },
+  {
+    "slug": "recon-first-30-minutes",
+    "title": "My first 30 minutes on any engagement",
+    "date": "2026-07-10",
+    "tags": "recon · methodology",
+    "summary": "Before I touch a single exploit, I spend half an hour just looking. Here's the checklist."
+  }
+]
