@@ -2,15 +2,17 @@
 
 /* ---------- config: edit these ---------- */
 var LINKS = {
-  discord: "https://discord.gg/your-invite",
-  x:       "https://x.com/your-handle",
-  github:  "https://github.com/your-handle"
+  discord:  "https://whop.com/checkout/plan_XdF9JKpshJH6e", // paid Discord checkout
+  academy:  "https://whop.com/cybersecurity-academy-1",     // free academy
+  linkedin: "https://www.linkedin.com/in/prashantdangii/",
+  x:        "https://x.com/prashantdangii",
+  github:   "https://github.com/prashantdangi1"
 };
 
 /* ---------- theme toggle ---------- */
 (function () {
   var root = document.documentElement;
-  if (!root.dataset.theme) root.dataset.theme = "light";
+  if (!root.dataset.theme) root.dataset.theme = "dark";
   var btn = document.getElementById("theme-toggle");
   if (btn) {
     btn.addEventListener("click", function () {
@@ -41,7 +43,8 @@ var LINKS = {
 (function () {
   var map = {
     "discord-cta": LINKS.discord,
-    "foot-discord": LINKS.discord,
+    "foot-li": LINKS.linkedin,
+    "academy-bar": LINKS.academy,
     "foot-x": LINKS.x,
     "foot-gh": LINKS.github
   };
