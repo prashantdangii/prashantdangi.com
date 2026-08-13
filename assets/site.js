@@ -6,7 +6,7 @@ var LINKS = {
   academy:  "https://whop.com/cybersecurity-academy-1",     // free academy
   linkedin: "https://www.linkedin.com/in/prashantdangii/",
   x:        "https://x.com/prashantdangii",
-  github:   "https://github.com/prashantdangi1"
+  github:   "https://github.com/prxdee"
 };
 
 /* ---------- theme toggle ---------- */
