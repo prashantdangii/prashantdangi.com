@@ -2,9 +2,7 @@
 
 /* ---------- config: edit these ---------- */
 var LINKS = {
-  discord:  "https://whop.com/checkout/plan_XdF9JKpshJH6e", // paid Discord checkout
-  academy:  "https://whop.com/cybersecurity-academy-1",     // free academy
-  linkedin: "https://www.linkedin.com/in/prashantdangii/",
+  linkedin: "https://www.linkedin.com/in/prashant-dangii/",
   x:        "https://x.com/prashantdangii",
   github:   "https://github.com/prxdee"
 };
@@ -42,9 +40,7 @@ var LINKS = {
 /* ---------- wire up links + year ---------- */
 (function () {
   var map = {
-    "discord-cta": LINKS.discord,
     "foot-li": LINKS.linkedin,
-    "academy-bar": LINKS.academy,
     "foot-x": LINKS.x,
     "foot-gh": LINKS.github
   };
@@ -136,7 +132,7 @@ function loadBlocks(sel, limit) {
             '<span class="bc-date">' + fmtDate(p.date) + "</span></div>" +
             '<h3 class="bc-title">' + (p.title || p.slug) + "</h3>" +
             (p.summary ? '<p class="bc-sum">' + p.summary + "</p>" : "") +
-            '<span class="bc-read">Read writeup <b>→</b></span>' +
+            '<span class="bc-read">Read note <b>→</b></span>' +
             tags +
             "</a>"
           );

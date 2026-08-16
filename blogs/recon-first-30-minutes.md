@@ -64,5 +64,4 @@ gets a lot faster.
 
 ---
 
-*I break into systems before the bad guys do. [Work with me](mailto:hello@prashantdangi.com)
-or [join the Discord](/#community) if you want to learn this stuff.*
+*I embed with engineering teams and ship in their environment. [Get in touch](mailto:prxshantdangi@gmail.com).*

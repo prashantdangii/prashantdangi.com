@@ -81,4 +81,4 @@ user B's data?* You'll find more of these than you'd like.
 
 ---
 
-*Want this kind of testing on your app? [Get in touch](mailto:hello@prashantdangi.com).*
+*I embed with engineering teams and ship in their environment. [Get in touch](mailto:prxshantdangi@gmail.com).*
