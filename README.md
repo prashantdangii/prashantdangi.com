@@ -1,13 +1,15 @@
 # prashantdangi.com
 
-Personal site of **Prashant Dangi**, Forward Deployed Engineer.
+Personal site of **Prashant Dangi**, cybersecurity professional
+(CEH v12, ISO/IEC 27001:2022 Lead Auditor).
 Plain HTML/CSS/JS, no build step. GitHub Pages + custom domain.
 
 ```
 .
-├── index.html          # FDE homepage: work, method, writing, about, contact
+├── index.html          # cybersecurity homepage: work, experience, method, writing, about
 ├── blog.html           # ordered list of all posts
 ├── post.html           # single post view (reads ?slug=)
+├── resume.pdf          # current resume
 ├── assets/
 │   ├── style.css
 │   └── site.js
@@ -25,7 +27,7 @@ Plain HTML/CSS/JS, no build step. GitHub Pages + custom domain.
    ---
    title: My post title
    date: 2026-08-16
-   tags: fde, delivery
+   tags: vapt, recon
    reading: 5 min read
    summary: One-line description.
    ---
