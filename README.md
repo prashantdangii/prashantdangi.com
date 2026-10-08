@@ -2,21 +2,18 @@
 
 Personal site of **Prashant Dangi**, cybersecurity professional
 (CEH v12, ISO/IEC 27001:2022 Lead Auditor).
-Plain HTML/CSS/JS, no build step. GitHub Pages + custom domain.
+Next.js App Router. Deploy on Vercel.
 
 ```
 .
-├── index.html          # cybersecurity homepage: work, experience, method, writing, about
-├── blog.html           # ordered list of all posts
-├── post.html           # single post view (reads ?slug=)
-├── resume.pdf          # current resume
-├── assets/
-│   ├── style.css
-│   └── site.js
+├── app/                # pages, layout, sitemap, robots
+├── components/         # sidebar, library, CyberAI, newsletter, Toptal badge
+├── lib/                # posts, links, CyberAI replies
+├── public/             # images and resume.pdf
 ├── blogs/
 │   ├── posts.json      # THE ORDER + titles + dates (edit this to publish)
 │   └── *.md
-├── CNAME · .nojekyll · robots.txt · sitemap.xml
+└── CNAME
 ```
 
 ## Writing a post
@@ -40,14 +37,15 @@ Plain HTML/CSS/JS, no build step. GitHub Pages + custom domain.
 
 ## Local preview
 
-The blog loads files over `fetch`, so open it through a server (not `file://`):
-
 ```bash
-python3 -m http.server 8000
-# visit http://localhost:8000
+npm install
+npm run dev
+# visit http://localhost:3000
 ```
+
+`npm run build` then `npm start` is the production server.
 
 ## Links
 
-Edit `LINKS` in `assets/site.js` for LinkedIn, X, and GitHub.
+Edit `LINKS` in `lib/links.js` for LinkedIn, X, GitHub, Upwork, Toptal, Skool, Discord, and YouTube.
 Email on the site is `prxshantdangi@gmail.com`.
