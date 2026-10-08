@@ -50,4 +50,4 @@ If I cannot answer that, I was visiting. I was not deployed.
 
 ---
 
-*Open to Forward Deployed Engineer roles. [Get in touch](mailto:prxshantdangi@gmail.com).*
+*This is the same loop I use on fractional engagements. [Write to me](mailto:prxshantdangi@gmail.com?subject=Fractional%20cybersecurity).*

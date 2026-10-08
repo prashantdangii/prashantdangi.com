@@ -3,6 +3,7 @@
     "slug": "idor-that-leaked-every-invoice",
     "title": "The IDOR that leaked every invoice in a fintech app",
     "date": "2026-07-28",
+    "kind": "writeup",
     "tags": "web · idor",
     "summary": "A single predictable ID exposed every customer's invoices. How I found it, and how they fixed it."
   },
@@ -10,6 +11,7 @@
     "slug": "recon-first-30-minutes",
     "title": "My first 30 minutes on any engagement",
     "date": "2026-07-10",
+    "kind": "writeup",
     "tags": "recon · methodology",
     "summary": "Before I touch a single exploit, I spend half an hour just looking. Here's the checklist."
   },
@@ -17,6 +19,7 @@
     "slug": "auth-that-has-to-live-with-active-directory",
     "title": "Auth that has to live with Active Directory",
     "date": "2026-07-22",
+    "kind": "blog",
     "tags": "identity · backend",
     "summary": "Re-architecting login and session in a stack you did not choose, without a greenfield rewrite."
   },
@@ -24,6 +27,7 @@
     "slug": "cicd-as-a-product-not-a-slide-deck",
     "title": "CI/CD as a product, not a slide deck",
     "date": "2026-08-04",
+    "kind": "blog",
     "tags": "devsecops · pipeline",
     "summary": "Security gates that run in the customer's pipeline, handed off as working services."
   },
@@ -31,6 +35,7 @@
     "slug": "what-forward-deployed-engineering-actually-is",
     "title": "What Forward Deployed Engineering actually is",
     "date": "2026-08-15",
+    "kind": "blog",
     "tags": "delivery",
     "summary": "Not consulting. Not a pentest. Sit with the team, ship in their repo, leave working software."
   },
@@ -38,6 +43,7 @@
     "slug": "first-week-inside-someone-elses-stack",
     "title": "The first week inside someone else's production stack",
     "date": "2026-08-12",
+    "kind": "blog",
     "tags": "onboarding",
     "summary": "How I spend the first days embedded with a customer team before I write a line that matters."
   },
@@ -45,6 +51,7 @@
     "slug": "shipping-an-internal-ai-platform",
     "title": "Shipping an internal AI platform that people actually used",
     "date": "2026-08-08",
+    "kind": "blog",
     "tags": "llm · python",
     "summary": "Model routing, caching, and a 20% cost cut. The part that mattered was getting it into daily production."
   }

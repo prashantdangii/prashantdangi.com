@@ -4,81 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prashant Dangi</title>
-<meta name="description" content="Notes from cybersecurity engagements by Prashant Dangi.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20'/><text x='50' y='70' font-size='56' font-family='monospace' font-weight='bold' fill='white' text-anchor='middle'>pd</text></svg>">
+<meta name="description" content="Notes from the field by Prashant Dangi.">
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="/assets/profile.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="/assets/profile.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
-<script>try{var t=localStorage.getItem('theme')||'dark';document.documentElement.dataset.theme=t;}catch(e){}</script>
 </head>
 <body>
-<div class="grain" aria-hidden="true"></div>
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
 
-<header class="site-head">
-  <a class="wordmark" href="/">prashant<span>dangi</span><i class="blink">_</i></a>
-  <nav class="nav-center">
-    <a href="/#work">Work</a>
-    <a href="/blog.html">Writing</a>
-    <a href="/#about">About</a>
-    <a href="/#contact">Contact</a>
-  </nav>
-  <button id="theme-toggle" class="icon-btn" type="button" aria-label="Toggle theme" title="Toggle light / dark">
-    <svg class="ico-sun" viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
-    <svg class="ico-moon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
-</header>
+  <aside class="side nav" id="site-side"></aside>
 
-<div class="promo-bar">
-  <a class="promo-pill" href="mailto:prxshantdangi@gmail.com?subject=Cybersecurity%20engagement">
-    <span class="promo-dot" aria-hidden="true"></span>
-    <span class="promo-text">Open to VAPT, red team, and security engineering roles</span>
-    <b class="promo-arrow">→</b>
-  </a>
-</div>
+  <main class="feed" id="content">
+    <a class="back" href="/blog.html?view=blogs">../blogs</a>
+    <article class="card" id="post">
+      <div class="skel"></div>
+    </article>
+    <article class="card">
+      <h2>For a scoped engagement.</h2>
+      <p>A surface, a timeline, and what done looks like.</p>
+      <div class="actions">
+        <a class="btn btn-fill" href="mailto:prxshantdangi@gmail.com?subject=Fractional%20cybersecurity">Email</a>
+      </div>
+    </article>
+  </main>
 
-<main>
-  <p class="more" style="margin:0 auto 30px;max-width:720px"><a class="link-arrow" href="/blog.html"><b>←</b> All notes</a></p>
-
-  <article id="post" class="post">
-    <p class="loading">loading…</p>
-  </article>
-
-  <hr style="max-width:720px;margin:56px auto">
-
-  <section class="band center" style="max-width:720px;margin:0 auto">
-    <h2 class="huge" style="font-size:clamp(2rem,6vw,3.2rem)">Need someone who<br><em>can prove it?</em></h2>
-    <p class="lede" style="margin:0 auto 28px">Open to VAPT, red team, and security engineering work. If you have a real attack surface, write to me.</p>
+  <aside class="rail" aria-label="Side">
     <div>
-      <a class="btn big" href="mailto:prxshantdangi@gmail.com"><span>Get in touch</span> <b>→</b></a>
-      <a class="btn big ghost" href="/blog.html"><span>More notes</span></a>
+      <h2>Library</h2>
+      <ul class="rail-links">
+        <li><a href="/blog.html?view=blogs">Blogs</a></li>
+        <li><a href="/blog.html?view=writeups">Write ups</a></li>
+        <li><a href="/blog.html?view=archive">Archive</a></li>
+      </ul>
     </div>
-  </section>
-</main>
-
-<footer class="site-foot">
-  <a class="foot-mark" href="/">prashantdangi<i class="blink">_</i></a>
-  <div class="foot-cols">
-    <div class="foot-social">
-      <a id="foot-li" href="#" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .78 0 1.73v20.53C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.74V1.73C24 .78 23.2 0 22.22 0z"/></svg>
-      </a>
-      <a id="foot-x" href="#" target="_blank" rel="noopener" aria-label="X / Twitter" title="X / Twitter">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a id="foot-gh" href="#" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.1 11.1 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
-      </a>
-      <a href="mailto:prxshantdangi@gmail.com" aria-label="Email" title="Email">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg>
-      </a>
+    <div>
+      <h2>Engagement</h2>
+      <p class="quiet"><a href="mailto:prxshantdangi@gmail.com?subject=Fractional%20cybersecurity">Email</a> with a surface, a timeline, and what done looks like.</p>
     </div>
-    <p class="foot-meta">© <span id="year"></span> Prashant Dangi · Cybersecurity</p>
-  </div>
-</footer>
+    <p class="quiet">© <span id="year"></span> Prashant Dangi</p>
+  </aside>
 
+</div>
 <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 <script src="/assets/site.js"></script>
-<script>loadPost('#post');</script>
+<script>loadPost("#post");</script>
 </body>
 </html>

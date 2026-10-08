@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CyberAI — Prashant Dangi</title>
+<meta name="description" content="CyberAI. Ask about offensive security, red teaming, GRC, and how a fractional engagement is scoped.">
+<meta name="theme-color" content="#121212">
+<link rel="icon" href="/assets/profile.jpg" type="image/jpeg">
+<link rel="apple-touch-icon" href="/assets/profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body class="chat-page">
+<a class="skip" href="#content">Skip to content</a>
+<div class="shell">
+
+  <aside class="side nav" id="site-side"></aside>
+
+  <main class="chat" id="content">
+    <div class="chat-bar">
+      <strong>CyberAI</strong>
+      <span>practice</span>
+    </div>
+    <div class="chat-scroll" id="chat-scroll">
+      <div class="chat-empty" id="chat-empty">
+        <p class="label">// cyberai</p>
+        <h1>CyberAI</h1>
+        <p>Ask about offensive security, red teaming, GRC, or how an engagement is scoped.</p>
+        <div class="chat-prompts">
+          <button type="button" data-prompt="What do you actually do?">What do you actually do?</button>
+          <button type="button" data-prompt="How does an engagement start?">How does an engagement start?</button>
+          <button type="button" data-prompt="Red team or a VAPT?">Red team or a VAPT?</button>
+          <button type="button" data-prompt="Where are the courses?">Where are the courses?</button>
+        </div>
+      </div>
+      <div class="chat-log" id="chat-log" hidden></div>
+    </div>
+    <form class="composer" id="composer">
+      <label class="skip" for="chat-input">Message</label>
+      <textarea id="chat-input" rows="1" placeholder="Message CyberAI" autocomplete="off"></textarea>
+      <button type="submit" id="chat-send" aria-label="Send" disabled>
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+      </button>
+    </form>
+  </main>
+
+  <aside class="rail" aria-label="Side">
+    <div>
+      <h2>Ask about</h2>
+      <p class="quiet">Offensive security, red teaming, GRC, courses, and how an engagement is scoped. A specific system still goes by email.</p>
+    </div>
+    <div>
+      <h2>Record</h2>
+      <ul class="rail-links">
+        <li><a href="https://www.upwork.com/freelancers/~01afc8350492e022fe" target="_blank" rel="noopener">Upwork</a></li>
+        <li><a href="https://www.toptal.com/developers/resume/prashant-dangi" target="_blank" rel="noopener">Toptal · Top 3%</a></li>
+        <li><a id="foot-li" href="https://www.linkedin.com/in/prashant-dangii/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a id="foot-gh" href="https://github.com/prashantdangii" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="/resume.pdf">Resume</a></li>
+      </ul>
+    </div>
+    <div>
+      <h2>Background</h2>
+      <p class="quiet">CEH v12<br>ISO/IEC 27001:2022 Lead Auditor<br>Finalist, IIT Madras hardware CTF 2026<br>Top 10, GPCSSI 2024<br>B.Tech CSE, Bennett University</p>
+    </div>
+    <p class="quiet">© <span id="year"></span> Prashant Dangi</p>
+  </aside>
+
+</div>
+<script src="/assets/site.js"></script>
+<script>initCyberAI();</script>
+</body>
+</html>
