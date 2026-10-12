@@ -23,12 +23,12 @@ export default async function PostPage({ params }) {
   const title = post.meta.title || slug;
   const metaLine = [post.meta.date ? fmtDate(post.meta.date) : "", post.meta.reading || ""].filter(Boolean).join(" · ");
   const year = new Date().getFullYear();
-  const back = "/blog?view=blogs";
+  const back = "/blog";
 
   return (
     <>
       <main className="feed" id="content">
-        <a className="back" href={back}>../blogs</a>
+        <a className="back" href={back}>../archives</a>
         <article className="card">
           <header className="post-head">
             <h1>{title}</h1>
@@ -53,11 +53,9 @@ export default async function PostPage({ params }) {
       <aside className="rail" aria-label="Side">
         <div className="rail-scroll">
         <div>
-          <h2>Library</h2>
+          <h2>Archives</h2>
           <ul className="rail-links">
-            <li><a href="/blog?view=blogs">Blogs</a></li>
-            <li><a href="/blog?view=writeups">Write ups</a></li>
-            <li><a href="/blog?view=archive">Archive</a></li>
+            <li><a href="/blog">All notes</a></li>
           </ul>
         </div>
         <div>

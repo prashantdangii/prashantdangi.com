@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 import { fmtDate, tagList } from "@/lib/format";
 
-const NAMES = { blogs: "Blogs", writeups: "Write ups", archive: "Archive" };
-const MARKS = { blogs: "// blogs", writeups: "// write ups", archive: "// archive" };
+const NAMES = { blogs: "Archives", writeups: "Archives", archive: "Archives" };
+const MARKS = { blogs: "// archives", writeups: "// archives", archive: "// archives" };
 
 function Card({ post }) {
   return (
@@ -33,7 +33,7 @@ export function Library({ posts, view }) {
 
   let body;
   if (!posts.length) {
-    const empty = view === "writeups" ? "No write ups yet." : view === "blogs" ? "No blogs yet." : "No notes yet.";
+    const empty = "No notes yet.";
     body = <p className="empty">{empty}</p>;
   } else if (view === "archive") {
     const sorted = visible.slice().sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
