@@ -31,7 +31,7 @@ export default async function CyberAIPage() {
         <a className="btn api-key" href={`mailto:${LINKS.email}?subject=CyberAI%20API%20key`}>Get API key</a>
         <div>
           <h2>Models</h2>
-          <a className="hf" href="https://huggingface.co/models?search=cybersecurity" target="_blank" rel="noopener">Hugging Face cybersecurity models</a>
+          <a className="hf" href="https://huggingface.co/models?search=cybersecurity" target="_blank" rel="noopener">Hugging Face</a>
           <ul className="model-list">
             {MODELS.map((model) => (
               <li key={model.name}>
