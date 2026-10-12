@@ -23,6 +23,7 @@ export default function ContactPage() {
         </article>
       </main>
       <aside className="rail" aria-label="Side">
+        <div className="rail-scroll">
         <div>
           <h2>Direct</h2>
           <ul className="rail-links">
@@ -39,7 +40,8 @@ export default function ContactPage() {
             <li><a href={LINKS.github} target="_blank" rel="noopener">GitHub</a></li>
           </ul>
         </div>
-        <p className="quiet">© {year} Prashant Dangi</p>
+        </div>
+        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
       </aside>
     </>
   );

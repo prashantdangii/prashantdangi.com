@@ -1,9 +1,17 @@
 import { CyberAI } from "@/components/CyberAI";
 import { LINKS } from "@/lib/links";
+import { MODELS } from "@/lib/models";
+
+const FOR = [
+  "Cybersecurity professionals",
+  "Red teamers",
+  "Security researchers",
+  "Bug bounty hunters"
+];
 
 export const metadata = {
   title: "CyberAI — Prashant Dangi",
-  description: "CyberAI. Ask about offensive security, red teaming, GRC, and how a fractional engagement is scoped."
+  description: "CyberAI is under construction. Pick a cybersecurity model. The chat is not fully functional yet."
 };
 
 export default function CyberAIPage() {
@@ -11,26 +19,31 @@ export default function CyberAIPage() {
   return (
     <>
       <CyberAI />
-      <aside className="rail" aria-label="Side">
+      <aside className="rail rail-cyber" aria-label="Models">
+        <div className="rail-scroll">
+        <a className="btn btn-fill api-key" href={`mailto:${LINKS.email}?subject=CyberAI%20API%20key`}>Get API key</a>
         <div>
-          <h2>Ask about</h2>
-          <p className="quiet">Offensive security, red teaming, GRC, courses, and how an engagement is scoped. A specific system still goes by email.</p>
-        </div>
-        <div>
-          <h2>Record</h2>
-          <ul className="rail-links">
-            <li><a href={LINKS.upwork} target="_blank" rel="noopener">Upwork</a></li>
-            <li><a href={LINKS.toptal} target="_blank" rel="noopener">Toptal · Top 3%</a></li>
-            <li><a href={LINKS.linkedin} target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href={LINKS.github} target="_blank" rel="noopener">GitHub</a></li>
-            <li><a href="/resume.pdf">Resume</a></li>
+          <h2>Models</h2>
+          <a className="hf" href="https://huggingface.co/models?search=cybersecurity" target="_blank" rel="noopener">Hugging Face cybersecurity models</a>
+          <ul className="model-list">
+            {MODELS.map((model) => (
+              <li key={model.name}>
+                <a href={model.href} target="_blank" rel="noopener">
+                  <strong>{model.name}</strong>
+                  <span>{model.note}</span>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
         <div>
-          <h2>Background</h2>
-          <p className="quiet">CEH v12<br />ISO/IEC 27001:2022 Lead Auditor<br />Finalist, IIT Madras hardware CTF 2026<br />Top 10, GPCSSI 2024<br />B.Tech CSE, Bennett University</p>
+          <h2>For</h2>
+          <div className="tags">
+            {FOR.map((name) => <span className="tag" key={name}>{name}</span>)}
+          </div>
         </div>
-        <p className="quiet">© {year} Prashant Dangi</p>
+        </div>
+        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
       </aside>
     </>
   );

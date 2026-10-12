@@ -41,6 +41,7 @@ export default function PracticePage() {
         </ol>
       </main>
       <aside className="rail" aria-label="Side">
+        <div className="rail-scroll">
         <div>
           <h2>Background</h2>
           <p className="quiet">CEH v12<br />ISO/IEC 27001:2022 Lead Auditor<br />Finalist, IIT Madras hardware CTF 2026<br />Top 10, GPCSSI 2024<br />B.Tech CSE, Bennett University</p>
@@ -54,7 +55,8 @@ export default function PracticePage() {
             <li><a href={LINKS.github} target="_blank" rel="noopener">GitHub</a></li>
           </ul>
         </div>
-        <p className="quiet">© {year} Prashant Dangi</p>
+        </div>
+        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
       </aside>
     </>
   );

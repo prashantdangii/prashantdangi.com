@@ -30,6 +30,7 @@ export default async function BlogPage({ searchParams }) {
         <Library posts={posts} view={view} />
       </main>
       <aside className="rail" aria-label="Side">
+        <div className="rail-scroll">
         <div>
           <h2>{heading}</h2>
           <p className="quiet">{blurb}</p>
@@ -43,7 +44,8 @@ export default async function BlogPage({ searchParams }) {
             <li><a href="/services">Services</a></li>
           </ul>
         </div>
-        <p className="quiet">© {year} Prashant Dangi</p>
+        </div>
+        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
       </aside>
     </>
   );

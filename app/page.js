@@ -8,6 +8,7 @@ const FOCUS = [
 ];
 
 export default function HomePage() {
+  const year = new Date().getFullYear();
   return (
     <>
       <main className="feed" id="content">
@@ -41,12 +42,15 @@ export default function HomePage() {
       </main>
 
       <aside className="rail rail-keywords" aria-label="Focus">
-        <div>
-          <h2>Focus</h2>
-          <div className="tags keywords">
-            {FOCUS.map((tag) => <span className="tag" key={tag}>{tag}</span>)}
+        <div className="rail-scroll">
+          <div>
+            <h2>Focus</h2>
+            <div className="tags keywords">
+              {FOCUS.map((tag) => <span className="tag" key={tag}>{tag}</span>)}
+            </div>
           </div>
         </div>
+        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
       </aside>
     </>
   );

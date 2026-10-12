@@ -48,6 +48,7 @@ export default async function CoursesPage({ searchParams }) {
         </div>
       </main>
       <aside className="rail" aria-label="Tracks">
+        <div className="rail-scroll">
         <div>
           <h2>Tracks</h2>
           <ul className="rail-links">
@@ -66,7 +67,8 @@ export default async function CoursesPage({ searchParams }) {
             <li><a href={LINKS.youtube} target="_blank" rel="noopener">YouTube</a></li>
           </ul>
         </div>
-        <p className="quiet">© {year} Prashant Dangi</p>
+        </div>
+        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
       </aside>
     </>
   );

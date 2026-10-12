@@ -8,6 +8,7 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
+  const year = new Date().getFullYear();
   const badge = fs.readFileSync(path.join(process.cwd(), "components/toptal-badge.html"), "utf8");
 
   return (
@@ -77,7 +78,10 @@ export default function ServicesPage() {
           <p className="quote-meta">Oct 2, 2025 – Oct 23, 2025</p>
         </article>
       </main>
-      <aside className="rail rail-badge" aria-label="Toptal" dangerouslySetInnerHTML={{ __html: badge }} />
+      <aside className="rail rail-badge" aria-label="Toptal">
+        <div className="rail-scroll" dangerouslySetInnerHTML={{ __html: badge }} />
+        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+      </aside>
     </>
   );
 }

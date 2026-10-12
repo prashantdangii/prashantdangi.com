@@ -280,6 +280,7 @@ export function Walkthrough({ lesson, track, year }) {
         </article>
       </main>
       <aside className="rail" aria-label="Steps">
+        <div className="rail-scroll">
         <div>
           <h2>{lesson.title}</h2>
           <ul className="rail-links">
@@ -293,7 +294,8 @@ export function Walkthrough({ lesson, track, year }) {
           </ul>
         </div>
         <p className="quiet"><a href={backHref}>All {track.name.toLowerCase()}</a></p>
-        <p className="quiet">© {year} Prashant Dangi</p>
+        </div>
+        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
       </aside>
     </>
   );

@@ -1,21 +1,17 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { aiReply } from "@/lib/ai";
-
-const PROMPTS = [
-  "What do you actually do?",
-  "How does an engagement start?",
-  "Red team or a VAPT?",
-  "Where are the courses?"
-];
+import { MODELS } from "@/lib/models";
 
 export function CyberAI() {
+  const [model, setModel] = useState(MODELS[0]);
+  const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [text, setText] = useState("");
   const [busy, setBusy] = useState(false);
   const inputRef = useRef(null);
   const scrollRef = useRef(null);
+  const menuRef = useRef(null);
 
   useEffect(() => {
     const el = inputRef.current;
@@ -29,15 +25,37 @@ export function CyberAI() {
     if (el) el.scrollTop = el.scrollHeight;
   }, [messages, busy]);
 
+  useEffect(() => {
+    if (!open) return;
+    function onPointer(event) {
+      if (!menuRef.current?.contains(event.target)) setOpen(false);
+    }
+    function onKey(event) {
+      if (event.key === "Escape") setOpen(false);
+    }
+    document.addEventListener("pointerdown", onPointer);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onPointer);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
   function ask(raw) {
     const value = String(raw || "").trim();
     if (!value || busy) return;
+    const name = model.name;
     setBusy(true);
     setText("");
+    setOpen(false);
     setMessages((list) => [...list, { role: "user", text: value }]);
     const wait = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 40 : 480;
     window.setTimeout(() => {
-      setMessages((list) => [...list, { role: "ai", html: aiReply(value) }]);
+      setMessages((list) => [...list, {
+        role: "ai",
+        name,
+        text: `${name} is under construction. This chat is not fully functional yet.`
+      }]);
       setBusy(false);
       inputRef.current?.focus();
     }, wait);
@@ -48,32 +66,59 @@ export function CyberAI() {
   return (
     <main className="chat" id="content">
       <div className="chat-bar">
-        <strong>CyberAI</strong>
-        <span>practice</span>
+        <div className="model-menu" ref={menuRef}>
+          <button
+            type="button"
+            className="model-pick"
+            aria-haspopup="listbox"
+            aria-expanded={open}
+            aria-label={`Model, ${model.name}`}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <strong>{model.name}</strong>
+            <span>{model.note}</span>
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="m6 9 6 6 6-6" />
+            </svg>
+          </button>
+          {open ? (
+            <ul className="model-listbox" role="listbox" aria-label="Models">
+              {MODELS.map((item) => (
+                <li key={item.name}>
+                  <button
+                    type="button"
+                    role="option"
+                    aria-selected={item.name === model.name}
+                    onClick={() => { setModel(item); setOpen(false); }}
+                  >
+                    <strong>{item.name}</strong>
+                    <span>{item.note}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
+          ) : null}
+        </div>
+        <span className="build-note">Under construction</span>
       </div>
       <div className="chat-scroll" id="chat-scroll" ref={scrollRef}>
         <div className="chat-empty" id="chat-empty" hidden={started}>
-          <p className="label">// cyberai</p>
-          <h1>CyberAI</h1>
-          <p>Ask about offensive security, red teaming, GRC, or how an engagement is scoped.</p>
-          <div className="chat-prompts">
-            {PROMPTS.map((prompt) => (
-              <button type="button" key={prompt} onClick={() => ask(prompt)}>{prompt}</button>
-            ))}
-          </div>
+          <p className="label">// under construction</p>
+          <h1>{model.name}</h1>
+          <p>This chat is under construction. It is not fully functional yet.</p>
         </div>
         <div className="chat-log" id="chat-log" hidden={!started}>
           {messages.map((msg, i) => msg.role === "user" ? (
             <div className="msg msg-user" key={i}><p>{msg.text}</p></div>
           ) : (
             <div className="msg msg-ai" key={i}>
-              <span className="msg-name">CyberAI</span>
-              <div className="msg-body" dangerouslySetInnerHTML={{ __html: msg.html }} />
+              <span className="msg-name">{msg.name}</span>
+              <div className="msg-body"><p>{msg.text}</p></div>
             </div>
           ))}
           {busy ? (
             <div className="msg msg-ai">
-              <span className="msg-name">CyberAI</span>
+              <span className="msg-name">{model.name}</span>
               <span className="dots" aria-hidden="true"><i /><i /><i /></span>
             </div>
           ) : null}
@@ -85,7 +130,7 @@ export function CyberAI() {
           id="chat-input"
           ref={inputRef}
           rows={1}
-          placeholder="Message CyberAI"
+          placeholder={`Message ${model.name}`}
           autoComplete="off"
           value={text}
           onChange={(e) => setText(e.target.value)}

@@ -51,6 +51,7 @@ export default async function PostPage({ params }) {
         </article>
       </main>
       <aside className="rail" aria-label="Side">
+        <div className="rail-scroll">
         <div>
           <h2>Library</h2>
           <ul className="rail-links">
@@ -63,7 +64,8 @@ export default async function PostPage({ params }) {
           <h2>Engagement</h2>
           <p className="quiet"><a href="mailto:prxshantdangi@gmail.com?subject=Fractional%20cybersecurity">Email</a> with a surface, a timeline, and what done looks like.</p>
         </div>
-        <p className="quiet">© {year} Prashant Dangi</p>
+        </div>
+        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
       </aside>
     </>
   );
