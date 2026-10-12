@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import { headers } from "next/headers";
 import { MenuBinder } from "@/components/MenuBinder";
 import { Sidebar } from "@/components/Sidebar";
@@ -33,6 +34,7 @@ export default async function RootLayout({ children }) {
   const h = await headers();
   const path = h.get("x-pathname") || "/";
   const search = h.get("x-search") || "";
+  const app = h.get("x-cyberai-app") === "1";
 
   return (
     <html lang="en">
@@ -41,14 +43,23 @@ export default async function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
       </head>
-      <body>
-        <a className="skip" href="#content">Skip to content</a>
-        <div className="shell">
-          <Sidebar current={pageId(path, search)} />
+      {app ? (
+        <body className="cyberai-app">
+          <a className="skip" href="#content">Skip to content</a>
           {children}
-        </div>
-        <MenuBinder />
-      </body>
+          <Analytics />
+        </body>
+      ) : (
+        <body>
+          <a className="skip" href="#content">Skip to content</a>
+          <div className="shell">
+            <Sidebar current={pageId(path, search)} />
+            {children}
+          </div>
+          <MenuBinder />
+          <Analytics />
+        </body>
+      )}
     </html>
   );
 }

@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { MODELS } from "@/lib/models";
 
-export function CyberAI() {
+export function CyberAI({ mode = "site", chatHref }) {
+  const app = mode === "app";
   const [model, setModel] = useState(MODELS[0]);
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -41,6 +42,14 @@ export function CyberAI() {
     };
   }, [open]);
 
+  function reset() {
+    if (busy) return;
+    setMessages([]);
+    setText("");
+    setOpen(false);
+    inputRef.current?.focus();
+  }
+
   function ask(raw) {
     const value = String(raw || "").trim();
     if (!value || busy) return;
@@ -63,8 +72,8 @@ export function CyberAI() {
 
   const started = messages.length > 0 || busy;
 
-  return (
-    <main className="chat" id="content">
+  const chat = (
+    <main className={app ? "chat chat-app" : "chat"} id="content">
       <div className="chat-bar">
         <div className="model-menu" ref={menuRef}>
           <button
@@ -99,13 +108,14 @@ export function CyberAI() {
             </ul>
           ) : null}
         </div>
-        <span className="build-note">Under construction</span>
+        {app ? null : <span className="build-note">Under construction</span>}
+        {app || !chatHref ? null : <a className="btn btn-fill chat-open" href={chatHref} target="_blank" rel="noopener noreferrer">Open chat</a>}
       </div>
       <div className="chat-scroll" id="chat-scroll" ref={scrollRef}>
         <div className="chat-empty" id="chat-empty" hidden={started}>
-          <p className="label">// under construction</p>
+          <p className="label">{app ? "CyberAI" : "// under construction"}</p>
           <h1>{model.name}</h1>
-          <p>This chat is under construction. It is not fully functional yet.</p>
+          <p>{app ? "How can I help you today?" : "This chat is under construction. It is not fully functional yet."}</p>
         </div>
         <div className="chat-log" id="chat-log" hidden={!started}>
           {messages.map((msg, i) => msg.role === "user" ? (
@@ -146,5 +156,16 @@ export function CyberAI() {
         </button>
       </form>
     </main>
+  );
+
+  if (!app) return chat;
+
+  return (
+    <div className="chat-frame">
+      <aside className="chat-side" aria-label="Chats">
+        <button type="button" className="chat-new" onClick={reset}>New chat</button>
+      </aside>
+      {chat}
+    </div>
   );
 }

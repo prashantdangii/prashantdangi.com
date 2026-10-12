@@ -1,4 +1,6 @@
+import { headers } from "next/headers";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { cyberaiHref } from "@/lib/links";
 
 const FOCUS = [
   "C", "Python", "Assembly (x86)", "Linux", "GitHub", "AWS", "Azure", "GCP",
@@ -7,8 +9,9 @@ const FOCUS = [
   "Threat Modeling", "OWASP", "Incident Response", "GRC", "ISO 27001", "NIST", "AI", "LLM"
 ];
 
-export default function HomePage() {
+export default async function HomePage() {
   const year = new Date().getFullYear();
+  const chat = cyberaiHref((await headers()).get("host"));
   return (
     <>
       <main className="feed" id="content">
@@ -35,7 +38,7 @@ export default function HomePage() {
         <article className="card">
           <p className="label">// about me</p>
           <p>Prashant is a cybersecurity professional specializing in offensive security, red teaming, and GRC. CEH v12 and ISO 27001 Lead Security Associate.</p>
-          <p className="after">Building and experimenting with <a href="/cyberai">CyberAI</a> to get the exploit. No refusal.</p>
+          <p className="after">Building and experimenting with <a href={chat}>CyberAI</a> to get the exploit. No refusal.</p>
         </article>
 
         <NewsletterForm />
