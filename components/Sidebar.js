@@ -4,7 +4,7 @@ const ICONS = {
   home: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1z"/></svg>',
   cyberai: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3.2 13.4 8.6 18.8 10 13.4 11.4 12 16.8 10.6 11.4 5.2 10 10.6 8.6Z"/></svg>',
   services: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h10"/></svg>',
-  courses: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5z"/></svg>',
+  practice: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M5 7l5 5-5 5M12 17h7"/></svg>',
   blogs: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M6 3.5h9l3.5 3.5V20.5H6zM15 3.5V7h3.5M8.5 12h7M8.5 16h4.5"/></svg>',
   writeups: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 3.5h8l4 4V20.5H7zM15 3.5V7.5h4M9.2 13.2l1.8 1.8 3.8-3.8"/></svg>',
   archive: '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 7.5h16v2.5H4zM6 10v9.5h12V10"/></svg>',
@@ -14,8 +14,8 @@ const ICONS = {
 const ITEMS = [
   ["home", "/", "Home"],
   ["cyberai", "/cyberai", "CyberAI"],
+  ["practice", "/practice", "Practice"],
   ["services", "/services", "Services"],
-  ["courses", "/courses", "Courses"],
   ["blogs", "/blog?view=blogs", "Blogs"],
   ["writeups", "/blog?view=writeups", "Write ups"],
   ["archive", "/blog?view=archive", "Archive"],
