@@ -41,7 +41,7 @@ export default async function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
       </head>
-      <body className={path === "/cyberai" ? "chat-page" : undefined}>
+      <body>
         <a className="skip" href="#content">Skip to content</a>
         <div className="shell">
           <Sidebar current={pageId(path, search)} />
