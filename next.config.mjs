@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  allowedDevOrigins: ["cyberai.localhost"],
   async redirects() {
     return [
       { source: "/index.html", destination: "/", permanent: true },

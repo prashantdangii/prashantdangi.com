@@ -1,4 +1,5 @@
 import { lessons } from "@/lib/courses";
+import { PUBLIC_ROUTES, SITE } from "@/lib/cyberai";
 import { getPosts } from "@/lib/posts";
 
 export default function sitemap() {
@@ -19,6 +20,10 @@ export default function sitemap() {
       priority: 0.6
     })),
     { url: "https://prashantdangi.com/contact", priority: 0.8 },
-    ...posts
+    ...posts,
+    ...PUBLIC_ROUTES.map(([path, priority]) => ({
+      url: path === "/" ? SITE : `${SITE}${path}`,
+      priority: Number(priority)
+    }))
   ];
 }

@@ -5,30 +5,41 @@ import { Sidebar } from "@/components/Sidebar";
 import { pageId } from "@/lib/links";
 import "./globals.css";
 
-export const metadata = {
-  metadataBase: new URL("https://prashantdangi.com"),
-  title: {
-    default: "Prashant Dangi — Fractional Cybersecurity",
-    template: "%s"
-  },
-  description: "Fractional cybersecurity engineering. Offensive security, red teaming, and GRC for teams that need a senior engineer in the work.",
-  openGraph: {
-    title: "Prashant Dangi — Fractional Cybersecurity",
-    description: "Offensive security, red teaming, and GRC. Fractional cybersecurity engineering for teams that need a senior engineer in the work.",
-    type: "website",
-    url: "https://prashantdangi.com",
-    images: ["/assets/profile.jpg"]
-  },
-  twitter: { card: "summary" },
-  icons: {
-    icon: "/assets/profile.jpg",
-    apple: "/assets/profile.jpg"
+export async function generateMetadata() {
+  const h = await headers();
+  if (h.get("x-cyberai-app") === "1") {
+    return {
+      metadataBase: new URL("https://cyberai.prashantdangi.com"),
+      applicationName: "Cyber AI",
+      icons: { icon: "/cyberai-mark.svg", apple: "/cyberai-mark.svg" }
+    };
   }
-};
+  return {
+    metadataBase: new URL("https://prashantdangi.com"),
+    title: {
+      default: "Prashant Dangi — Fractional Cybersecurity",
+      template: "%s"
+    },
+    description: "Fractional cybersecurity engineering. Offensive security, red teaming, and GRC for teams that need a senior engineer in the work.",
+    openGraph: {
+      title: "Prashant Dangi — Fractional Cybersecurity",
+      description: "Offensive security, red teaming, and GRC. Fractional cybersecurity engineering for teams that need a senior engineer in the work.",
+      type: "website",
+      url: "https://prashantdangi.com",
+      images: ["/assets/profile.jpg"]
+    },
+    twitter: { card: "summary" },
+    icons: {
+      icon: "/assets/profile.jpg",
+      apple: "/assets/profile.jpg"
+    }
+  };
+}
 
-export const viewport = {
-  themeColor: "#121212"
-};
+export async function generateViewport() {
+  const h = await headers();
+  return { themeColor: h.get("x-cyberai-app") === "1" ? "#09070f" : "#121212" };
+}
 
 export default async function RootLayout({ children }) {
   const h = await headers();
@@ -44,7 +55,7 @@ export default async function RootLayout({ children }) {
         <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
       </head>
       {app ? (
-        <body className="cyberai-app">
+        <body className="cai-root">
           <a className="skip" href="#content">Skip to content</a>
           {children}
           <Analytics />
