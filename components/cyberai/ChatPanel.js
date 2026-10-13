@@ -7,7 +7,7 @@ import { useAccount } from "@/components/cyberai/session";
 import { API_BASE, MODELS } from "@/lib/cyberai";
 
 const STORE = "cai.chat.v1";
-const PAUSE = "Balance is $0.00, so this message stayed in the browser. Nothing was sent to a model. Credits can be added once payments are connected.";
+const PAUSE = "Balance is $0.00. Add credits before this request can run.";
 
 function load() {
   try {
@@ -52,15 +52,14 @@ export function ChatPanel() {
   return (
     <div className="cai-chat">
       <div className="cai-chat-banner">
-        <span>Balance is $0.00. Add credits before a request can leave this browser.</span>
-        <Link href="/console/billing">Add credits</Link>
+        <span>Balance is $0.00. Add credits to keep sending requests.</span>
+        <Link className="cai-btn cai-btn-fill" href="/console/billing">Add credits</Link>
       </div>
       <div className="cai-chat-log">
         {messages.length === 0 ? (
           <div className="cai-chat-empty">
             <div>
               <h2>{model.name}</h2>
-              <p className="cai-sub">The transcript stays in this tab. Sending does not call a model while the balance is empty.</p>
             </div>
           </div>
         ) : messages.map((message, index) => message.role === "user" ? (
@@ -98,7 +97,7 @@ export function ChatPanel() {
           <button className="cai-btn cai-btn-fill" type="submit" disabled={!text.trim()}>Send</button>
         </div>
       </form>
-      <p className="cai-chat-note">Signed in as {account.email}. This chat stays in this tab until you clear it.</p>
+      <p className="cai-chat-note">This chat stays in the browser. Refreshing clears it.</p>
       <div className="cai-chat-note" style={{ display: "flex", justifyContent: "center", gap: 16 }}>
         <details className="cai-details">
           <summary>View code</summary>

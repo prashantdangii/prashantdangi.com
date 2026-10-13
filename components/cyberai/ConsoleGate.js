@@ -9,6 +9,8 @@ import { CONSOLE_LINKS, barePath } from "@/lib/cyberai";
 
 const WORK = new Set(["/console", "/console/models", "/console/chat", "/console/keys", "/console/activity"]);
 
+const CRUMB = Object.fromEntries(CONSOLE_LINKS.map((item) => [item.href, item.label]));
+
 function Icon({ name }) {
   const paths = {
     home: "M4 11.2 12 4l8 7.2V20H4z",
@@ -19,7 +21,9 @@ function Icon({ name }) {
     billing: "M3 7h18v10H3zM3 11h18",
     workspaces: "M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z",
     referrals: "M12 4v16M4 12h16",
-    settings: "M4 7h16M4 12h10M4 17h16"
+    settings: "M4 7h16M4 12h10M4 17h16",
+    docs: "M6 3.5h8l4 4V20.5H6zM14 3.5V8h4.5",
+    support: "M4 6h16v12H4zM4 7l8 6 8-6"
   };
   return (
     <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" aria-hidden="true">
@@ -38,7 +42,7 @@ function Jump() {
         <span className="skip">Jump to</span>
         <input
           value={query}
-          placeholder="Jump to…"
+          placeholder="Search or jump to…"
           autoComplete="off"
           onFocus={() => setOpen(true)}
           onBlur={() => window.setTimeout(() => setOpen(false), 120)}
@@ -71,8 +75,7 @@ export function ConsoleGate({ children }) {
 
   if (!ready || !account) {
     return (
-      <div className="cai">
-        <div className="cai-mesh" aria-hidden="true" />
+      <div className="cai cai-console-boot">
         <div className="cai-boot">{ready ? "Redirecting to log in…" : "Opening the console…"}</div>
       </div>
     );
@@ -92,13 +95,13 @@ export function ConsoleGate({ children }) {
       <div className="cai">
         <div className="cai-console">
           <aside className="cai-side" aria-label="Console">
-            <Link href="/" className="cai-brand" style={{ margin: "4px 8px 14px" }}>
+            <Link href="/" className="cai-brand cai-side-brand">
               <Mark />
               Cyber AI
             </Link>
             <div className="cai-side-scroll">
               <div className="cai-side-group">
-                <p>Work</p>
+                <p>Inference</p>
                 {work.map((item) => (
                   <Link key={item.href} href={item.href} aria-current={pathname === item.href ? "page" : undefined}>
                     <Icon name={item.icon} />
@@ -115,19 +118,23 @@ export function ConsoleGate({ children }) {
                   </Link>
                 ))}
               </div>
+              <div className="cai-side-group">
+                <p>Documentation</p>
+                <Link href="/docs"><Icon name="docs" />Docs</Link>
+                <a href="mailto:prxshantdangi@gmail.com?subject=Cyber%20AI%20support"><Icon name="support" />Support</a>
+              </div>
             </div>
             <div className="cai-side-foot">
-              <p className="cai-balance">Balance $0.00</p>
+              <p className="cai-balance">Balance <strong>$0.00</strong></p>
               <p className="cai-email">{account.email}</p>
-              <Link href="/docs">Docs</Link>
             </div>
           </aside>
           <div className="cai-main">
             <div className="cai-top">
+              <p className="cai-crumb">Console <span>/</span> {CRUMB[pathname] || "Home"}</p>
               <Jump />
               <div className="cai-top-links">
                 <Link href="/docs">Docs</Link>
-                <a href="mailto:prxshantdangi@gmail.com?subject=Cyber%20AI%20support">Support</a>
               </div>
             </div>
             <div className={bleed ? "cai-canvas cai-canvas-bleed" : "cai-canvas"}>

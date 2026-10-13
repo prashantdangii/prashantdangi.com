@@ -52,7 +52,7 @@ export function KeysPanel() {
   return (
     <>
       <h1>API keys</h1>
-      <p className="cai-sub">Keys are stored in this browser. Send one as a bearer token when the host is connected. The plan cap is enforced here.</p>
+      <p className="cai-sub">Send the key as a bearer token. Active keys are capped by the plan on this account.</p>
       <form className="cai-inline-form" onSubmit={onCreate}>
         <label className="skip" htmlFor="key-name">Key name</label>
         <input id="key-name" value={name} maxLength={40} placeholder="Key name" onChange={(event) => setName(event.target.value)} />
@@ -62,7 +62,7 @@ export function KeysPanel() {
       {fresh ? (
         <div className="cai-secret">
           <strong>Copy this key now.</strong>
-          <p className="cai-note">It stays in this browser so you can copy it again. It is not on a server.</p>
+          <p className="cai-note">Copy it now. It is stored in this browser, not on a server.</p>
           <code>{fresh.secret}</code>
           <button className="cai-btn" type="button" onClick={() => copy(fresh.secret)}>{copied ? "Copied" : "Copy key"}</button>
         </div>

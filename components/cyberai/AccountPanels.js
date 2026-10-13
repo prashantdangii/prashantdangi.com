@@ -23,7 +23,7 @@ export function ModelsPanel() {
   return (
     <>
       <h1>Models</h1>
-      <p className="cai-sub">Pick a lineup id for chat. The same id goes in the model field of a completion request.</p>
+      <p className="cai-sub">The id is the model field on a completion request.</p>
       <div className="cai-stack">
         {MODELS.map((model) => (
           <article className="cai-model" key={model.id}>
@@ -52,7 +52,7 @@ export function ActivityPanel() {
   return (
     <>
       <h1>Activity</h1>
-      <p className="cai-sub">Account events from this browser. Model requests will show here after the host is connected.</p>
+      <p className="cai-sub">Account events from this browser. Requests show up here once the API is connected.</p>
       {events === null ? <p className="cai-note">Loading…</p> : events.length === 0 ? (
         <div className="cai-empty"><h2>No activity yet</h2><p>Creating a key or a workspace writes a line here.</p></div>
       ) : (
@@ -77,7 +77,7 @@ export function BillingPanel() {
   return (
     <>
       <h1>Billing</h1>
-      <p className="cai-sub">Payments are not connected. This page does not collect a card, a wallet, or a tax id.</p>
+      <p className="cai-sub">No card on file. Credits can be added when payments are connected.</p>
       <div className="cai-stats">
         <div className="cai-stat"><span>Available balance</span><strong>$0.00</strong></div>
         <div className="cai-stat"><span>Top-ups</span><strong>$0.00</strong></div>
@@ -85,7 +85,7 @@ export function BillingPanel() {
       </div>
       <div className="cai-panel">
         <h2>Add credits</h2>
-        <p>Launch credit is reserved for early accounts. The button stays off until a payment provider is wired. No charge happens from this console.</p>
+        <p>The button stays off until a payment provider is wired. Nothing is charged from this page.</p>
         <button className="cai-btn cai-btn-fill" type="button" disabled>Add credits</button>
       </div>
     </>
@@ -121,7 +121,7 @@ export function WorkspacesPanel() {
   return (
     <>
       <h1>Workspaces</h1>
-      <p className="cai-sub">A workspace is a label for keys and usage. Sharing a workspace with other people waits on billing.</p>
+      <p className="cai-sub">Group keys and usage. Shared seats wait until billing can attach them.</p>
       <form className="cai-inline-form" onSubmit={onCreate}>
         <label className="skip" htmlFor="space-name">Workspace name</label>
         <input id="space-name" value={name} maxLength={40} placeholder="Workspace name" onChange={(event) => setName(event.target.value)} />
@@ -155,7 +155,7 @@ export function ReferralsPanel() {
   return (
     <>
       <h1>Referrals</h1>
-      <p className="cai-sub">Share the link. Attribution in this browser counts accounts that signed up with your code. Payouts start when billing exists.</p>
+      <p className="cai-sub">Share this link. Referred signups in this browser are counted below.</p>
       <div className="cai-secret">
         <span>Your link</span>
         <code>{link}</code>
@@ -187,7 +187,7 @@ export function SettingsPanel() {
   return (
     <>
       <h1>Settings</h1>
-      <p className="cai-sub">Firebase Auth will replace this browser session. The email below is the local account.</p>
+      <p className="cai-sub">This account lives in the browser until Firebase Auth replaces it.</p>
       <div className="cai-stats">
         <div className="cai-stat"><span>Email</span><strong style={{ fontSize: 16 }}>{account.email}</strong></div>
         <div className="cai-stat"><span>Plan</span><strong>{plan.name}</strong></div>
