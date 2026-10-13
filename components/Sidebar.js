@@ -33,7 +33,13 @@ export function Sidebar({ current }) {
         </button>
       </div>
       <nav className="side-nav nav-links" id="nav-links" aria-label="Primary">
-        {ITEMS.map(([id, href, label]) => (
+        {ITEMS.map(([id, href, label]) => id === "cyberai" ? (
+          <a key={id} className="nav-cyberai" href={href} target="_blank" rel="noopener noreferrer" aria-label="CyberAI, opens in a new tab">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" aria-hidden="true"><path d="M12 3.2 13.4 8.6 18.8 10 13.4 11.4 12 16.8 10.6 11.4 5.2 10 10.6 8.6Z" /></svg>
+            {label}
+            <svg className="nav-out" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" /></svg>
+          </a>
+        ) : (
           <a
             key={id}
             href={href}

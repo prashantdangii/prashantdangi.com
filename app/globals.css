@@ -121,6 +121,16 @@ p { text-wrap: pretty; }
   color: var(--ink);
   background: var(--nav);
 }
+.side-nav a.nav-cyberai {
+  color: #e4d4ff;
+  background: rgba(109, 40, 217, 0.34);
+}
+.side-nav a.nav-cyberai svg { opacity: 1; color: #c4b5fd; }
+.side-nav a.nav-cyberai .nav-out { margin-left: auto; color: #ddd6fe; }
+.side-nav a.nav-cyberai:hover {
+  color: #fff;
+  background: rgba(124, 58, 237, 0.5);
+}
 .side-social {
   display: flex;
   align-items: center;
