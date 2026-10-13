@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { FOOTER, NAV } from "@/lib/cyberai";
+import { useSessionState } from "@/components/cyberai/session";
 import "@/app/cyberai/cyberai.css";
 
 export function Mark() {
@@ -12,6 +13,15 @@ export function Mark() {
 export function SiteChrome({ active = "", notice = false, children }) {
   const [open, setOpen] = useState(false);
   const [showNotice, setShowNotice] = useState(false);
+  const { ready, account } = useSessionState();
+  const signedIn = ready && Boolean(account);
+  const footer = signedIn
+    ? FOOTER.flatMap(([label, href]) => {
+        if (href === "/login") return [["Console", "/console/chat"]];
+        if (href === "/signup") return [];
+        return [[label, href]];
+      })
+    : FOOTER;
 
   useEffect(() => {
     if (!notice) return;
@@ -48,8 +58,14 @@ export function SiteChrome({ active = "", notice = false, children }) {
             ))}
           </nav>
           <div className="cai-nav-cta">
-            <Link className="cai-quiet-link" href="/login">Log in</Link>
-            <Link className="cai-btn cai-btn-fill" href="/signup">Sign up</Link>
+            {signedIn ? (
+              <Link className="cai-btn cai-btn-fill" href="/console/chat">Console</Link>
+            ) : (
+              <>
+                <Link className="cai-quiet-link" href="/login">Log in</Link>
+                <Link className="cai-btn cai-btn-fill" href="/signup">Sign up</Link>
+              </>
+            )}
           </div>
           <button
             type="button"
@@ -66,8 +82,14 @@ export function SiteChrome({ active = "", notice = false, children }) {
             {NAV.map(([label, href]) => (
               <Link key={href} href={href} onClick={() => setOpen(false)}>{label}</Link>
             ))}
-            <Link href="/login" onClick={() => setOpen(false)}>Log in</Link>
-            <Link href="/signup" onClick={() => setOpen(false)}>Sign up</Link>
+            {signedIn ? (
+              <Link href="/console/chat" onClick={() => setOpen(false)}>Console</Link>
+            ) : (
+              <>
+                <Link href="/login" onClick={() => setOpen(false)}>Log in</Link>
+                <Link href="/signup" onClick={() => setOpen(false)}>Sign up</Link>
+              </>
+            )}
           </div>
         ) : null}
       </header>
@@ -83,7 +105,7 @@ export function SiteChrome({ active = "", notice = false, children }) {
       <footer className="cai-footer">
         <div className="cai-wrap">
           <ul>
-            {FOOTER.map(([label, href]) => (
+            {footer.map(([label, href]) => (
               <li key={href}><Link href={href}>{label}</Link></li>
             ))}
           </ul>
