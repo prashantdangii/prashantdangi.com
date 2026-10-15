@@ -166,6 +166,99 @@ p { text-wrap: pretty; }
 }
 .feed > .year:first-child { margin-top: 0; }
 
+.archive-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+.archive-crumb {
+  margin: 0;
+  color: var(--dim);
+  font-size: 13px;
+}
+.archive-crumb a:hover { color: var(--ink); }
+.archive-crumb span { margin: 0 8px; color: #4a4a4a; }
+.archive-top .search { width: min(220px, 46%); flex: none; }
+.archive-title {
+  margin: 22px 0 18px;
+  font-size: 1.7rem;
+  font-weight: 620;
+  letter-spacing: -0.04em;
+}
+.archive-timeline { margin-left: 8px; }
+.tl-year {
+  margin: 0;
+  padding-left: 28px;
+  border-left: 1px solid #3f4144;
+}
+.tl-year h2 {
+  position: relative;
+  margin: 10px 0 8px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: #cccccc;
+}
+.tl-year:first-child h2 { margin-top: 4px; }
+.tl-year h2::before {
+  content: "";
+  position: absolute;
+  left: -35px;
+  top: 0.42em;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 3px solid #3f4144;
+  background: var(--bg);
+  box-shadow: 0 0 2px 0 #c2c6cc;
+}
+.tl-year ol {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 6px;
+}
+.tl-year li:nth-child(odd) {
+  background-image: linear-gradient(to left, rgb(26, 26, 30), rgb(39, 39, 45), rgb(39, 39, 45), rgb(39, 39, 45), rgb(26, 26, 30));
+}
+.tl-year li a {
+  position: relative;
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-height: 3rem;
+  padding: 0 14px 0 8px;
+  color: rgb(138, 180, 248);
+  line-height: 3rem;
+}
+.tl-year li a::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  margin-top: -4px;
+  border-radius: 50%;
+  background: rgb(150, 152, 156);
+  box-shadow: 0 0 3px 0 #c2c6cc;
+}
+.tl-year time {
+  color: rgb(107, 116, 124);
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+}
+.tl-year span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tl-year li a:hover,
+.tl-year li a:hover span {
+  color: #d2603a;
+}
+
 .card {
   display: block;
   padding: 18px 18px 14px;
@@ -620,6 +713,14 @@ a.post-card { display: block; }
   line-height: 1.6;
 }
 .prose pre code { font-size: 12.5px; background: none; border: 0; padding: 0; color: #d5e8cc; }
+.prose table { width: 100%; border-collapse: collapse; margin: 1.2em 0; font-size: 14px; }
+.prose th, .prose td {
+  border-bottom: 1px solid var(--line);
+  padding: 8px 10px;
+  text-align: left;
+  vertical-align: top;
+}
+.prose th { color: var(--ink); font-weight: 600; }
 
 /* CyberAI chat */
 .chat {

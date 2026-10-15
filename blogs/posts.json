@@ -1,5 +1,13 @@
 [
   {
+    "slug": "guardrails-not-guidelines",
+    "title": "Guardrails, not guidelines: building a GCP landing zone that fails the pull request",
+    "date": "2026-10-13",
+    "kind": "blog",
+    "tags": "gcp · terraform",
+    "summary": "A landing zone whose next bad change fails in CI, proven on a laptop with no cloud account."
+  },
+  {
     "slug": "idor-that-leaked-every-invoice",
     "title": "The IDOR that leaked every invoice in a fintech app",
     "date": "2026-07-28",
