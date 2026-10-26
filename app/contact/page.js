@@ -1,3 +1,4 @@
+import { SiteFoot } from "@/components/SiteFoot";
 import { LINKS } from "@/lib/links";
 
 export const metadata = {
@@ -40,8 +41,14 @@ export default function ContactPage() {
             <li><a href={LINKS.github} target="_blank" rel="noopener">GitHub</a></li>
           </ul>
         </div>
+        <div>
+          <h2>Legal</h2>
+          <ul className="rail-links">
+            <li><a href="/privacy">Privacy Policy</a></li>
+          </ul>
         </div>
-        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+        </div>
+        <SiteFoot year={year} />
       </aside>
     </>
   );

@@ -1,4 +1,5 @@
 import { AdFeed, AdUnit } from "@/components/AdUnit";
+import { SiteFoot } from "@/components/SiteFoot";
 import { AD_SLOTS } from "@/lib/ads";
 import { LINKS } from "@/lib/links";
 import { getTrack, lessonsFor, tracks } from "@/lib/courses";
@@ -72,7 +73,7 @@ export default async function CoursesPage({ searchParams }) {
           </ul>
         </div>
         </div>
-        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+        <SiteFoot year={year} />
       </aside>
     </>
   );

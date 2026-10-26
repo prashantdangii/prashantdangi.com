@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import Link from "next/link";
 import { SiteChrome } from "@/components/cyberai/SiteChrome";
+import { SiteFoot } from "@/components/SiteFoot";
 
 export default async function NotFound() {
   const h = await headers();
@@ -30,7 +31,7 @@ export default async function NotFound() {
       </main>
       <aside className="rail" aria-label="Side">
         <div className="rail-scroll" />
-        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+        <SiteFoot year={year} />
       </aside>
     </>
   );

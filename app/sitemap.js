@@ -20,6 +20,7 @@ export default function sitemap() {
       priority: 0.6
     })),
     { url: "https://prashantdangi.com/contact", priority: 0.8 },
+    { url: "https://prashantdangi.com/privacy", priority: 0.5 },
     ...posts,
     ...PUBLIC_ROUTES.map(([path, priority]) => ({
       url: path === "/" ? SITE : `${SITE}${path}`,

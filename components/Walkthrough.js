@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { AdFeed, AdUnit } from "@/components/AdUnit";
+import { SiteFoot } from "@/components/SiteFoot";
 import { AD_SLOTS } from "@/lib/ads";
 
 function norm(value) {
@@ -299,7 +300,7 @@ export function Walkthrough({ lesson, track, year }) {
         <AdUnit slot={AD_SLOTS.rail} className="ad-rail" />
         <p className="quiet"><a href={backHref}>All {track.name.toLowerCase()}</a></p>
         </div>
-        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+        <SiteFoot year={year} />
       </aside>
     </>
   );

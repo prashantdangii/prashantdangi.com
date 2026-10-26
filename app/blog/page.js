@@ -1,5 +1,6 @@
 import { AdFeed, AdMultiplex, AdUnit } from "@/components/AdUnit";
 import { Library } from "@/components/Library";
+import { SiteFoot } from "@/components/SiteFoot";
 import { AD_SLOTS } from "@/lib/ads";
 import { getPosts } from "@/lib/posts";
 
@@ -27,7 +28,7 @@ export default function BlogPage() {
           </div>
           <AdUnit slot={AD_SLOTS.rail} className="ad-rail" />
         </div>
-        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+        <SiteFoot year={year} />
       </aside>
     </>
   );

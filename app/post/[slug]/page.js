@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { AdFeed, AdInArticle, AdMultiplex, AdUnit } from "@/components/AdUnit";
+import { SiteFoot } from "@/components/SiteFoot";
 import { AD_SLOTS } from "@/lib/ads";
 import { fmtDate, getPost, getPosts, tagList } from "@/lib/posts";
 
@@ -69,7 +70,7 @@ export default async function PostPage({ params }) {
           <p className="quiet"><a href="mailto:prxshantdangi@gmail.com?subject=Fractional%20cybersecurity">Email</a> with a surface, a timeline, and what done looks like.</p>
         </div>
         </div>
-        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+        <SiteFoot year={year} />
       </aside>
     </>
   );

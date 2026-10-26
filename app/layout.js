@@ -58,11 +58,15 @@ export default async function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
         {!app ? (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-            crossOrigin="anonymous"
-          />
+          <>
+            {/* Google AdSense — required in <head> for site verification */}
+            <meta name="google-adsense-account" content="ca-pub-6249156640388773" />
+            <script
+              async
+              src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6249156640388773"
+              crossOrigin="anonymous"
+            />
+          </>
         ) : null}
       </head>
       {app ? (

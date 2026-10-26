@@ -1,5 +1,6 @@
 import { AdUnit } from "@/components/AdUnit";
 import { LabTerminal } from "@/components/LabTerminal";
+import { SiteFoot } from "@/components/SiteFoot";
 import { AD_SLOTS } from "@/lib/ads";
 import { tracks } from "@/lib/courses";
 import { labTree } from "@/lib/labfs";
@@ -31,7 +32,7 @@ export default async function PracticePage({ searchParams }) {
           </div>
           <AdUnit slot={AD_SLOTS.rail} className="ad-rail" />
         </div>
-        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+        <SiteFoot year={year} />
       </aside>
     </>
   );

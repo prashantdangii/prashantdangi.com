@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { AdFeed, AdUnit } from "@/components/AdUnit";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { SiteFoot } from "@/components/SiteFoot";
 import { AD_SLOTS } from "@/lib/ads";
 import { cyberaiHref } from "@/lib/links";
 
@@ -58,7 +59,7 @@ export default async function HomePage() {
           </div>
           <AdUnit slot={AD_SLOTS.rail} className="ad-rail" />
         </div>
-        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+        <SiteFoot year={year} />
       </aside>
     </>
   );

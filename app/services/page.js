@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { AdFeed } from "@/components/AdUnit";
+import { SiteFoot } from "@/components/SiteFoot";
 import { AD_SLOTS } from "@/lib/ads";
 import { LINKS } from "@/lib/links";
 
@@ -84,7 +85,7 @@ export default function ServicesPage() {
       </main>
       <aside className="rail rail-badge" aria-label="Toptal">
         <div className="rail-scroll" dangerouslySetInnerHTML={{ __html: badge }} />
-        <p className="quiet rail-foot">© {year} Prashant Dangi</p>
+        <SiteFoot year={year} />
       </aside>
     </>
   );
