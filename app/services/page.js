@@ -1,5 +1,7 @@
 import fs from "fs";
 import path from "path";
+import { AdFeed } from "@/components/AdUnit";
+import { AD_SLOTS } from "@/lib/ads";
 import { LINKS } from "@/lib/links";
 
 export const metadata = {
@@ -42,6 +44,8 @@ export default function ServicesPage() {
             </div>
           </div>
         </a>
+
+        <AdFeed slot={AD_SLOTS.feed} />
 
         <p className="label">// upwork reviews</p>
         <article className="card quote">

@@ -2,6 +2,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { headers } from "next/headers";
 import { MenuBinder } from "@/components/MenuBinder";
 import { Sidebar } from "@/components/Sidebar";
+import { ADSENSE_CLIENT } from "@/lib/ads";
 import { pageId } from "@/lib/links";
 import "./globals.css";
 
@@ -21,6 +22,9 @@ export async function generateMetadata() {
       template: "%s"
     },
     description: "Fractional cybersecurity engineering. Offensive security, red teaming, and GRC for teams that need a senior engineer in the work.",
+    other: {
+      "google-adsense-account": ADSENSE_CLIENT
+    },
     openGraph: {
       title: "Prashant Dangi — Fractional Cybersecurity",
       description: "Offensive security, red teaming, and GRC. Fractional cybersecurity engineering for teams that need a senior engineer in the work.",
@@ -53,6 +57,13 @@ export default async function RootLayout({ children }) {
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+        {!app ? (
+          <script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+          />
+        ) : null}
       </head>
       {app ? (
         <body className="cai-root">

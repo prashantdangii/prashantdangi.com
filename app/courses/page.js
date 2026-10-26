@@ -1,3 +1,5 @@
+import { AdFeed, AdUnit } from "@/components/AdUnit";
+import { AD_SLOTS } from "@/lib/ads";
 import { LINKS } from "@/lib/links";
 import { getTrack, lessonsFor, tracks } from "@/lib/courses";
 
@@ -36,6 +38,7 @@ export default async function CoursesPage({ searchParams }) {
             <div className="meta"><span className="tag">{lesson.steps.length} steps</span></div>
           </a>
         ))}
+        <AdFeed slot={AD_SLOTS.feed} />
         <div className="course-join">
           <p className="label">// join</p>
           <p className="quiet">
@@ -59,6 +62,7 @@ export default async function CoursesPage({ searchParams }) {
             ))}
           </ul>
         </div>
+        <AdUnit slot={AD_SLOTS.rail} className="ad-rail" />
         <div>
           <h2>Join</h2>
           <ul className="rail-links">

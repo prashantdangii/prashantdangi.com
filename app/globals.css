@@ -1038,6 +1038,40 @@ body.cyberai-app {
   .shell > main::-webkit-scrollbar { display: none; }
   .chat, .tty { height: 100%; }
 }
+/* AdSense */
+.ad-wrap {
+  width: 100%;
+  min-width: 0;
+  min-height: 90px;
+  margin: 0;
+  overflow: hidden;
+  text-align: center;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+}
+.ad-wrap.ad-feed { min-height: 100px; }
+.ad-wrap.ad-inarticle {
+  margin: 1.25em 0;
+  min-height: 120px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+.ad-wrap.ad-multiplex { min-height: 140px; }
+.ad-wrap.ad-rail {
+  min-height: 250px;
+  margin-top: 4px;
+}
+.ad-wrap ins.adsbygoogle {
+  display: block;
+  min-height: inherit;
+}
+.card .ad-wrap.ad-inarticle {
+  margin-left: -2px;
+  margin-right: -2px;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation: none !important;

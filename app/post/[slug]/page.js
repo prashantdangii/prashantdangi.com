@@ -1,4 +1,6 @@
 import { notFound } from "next/navigation";
+import { AdFeed, AdInArticle, AdMultiplex, AdUnit } from "@/components/AdUnit";
+import { AD_SLOTS } from "@/lib/ads";
 import { fmtDate, getPost, getPosts, tagList } from "@/lib/posts";
 
 export function generateStaticParams() {
@@ -40,8 +42,11 @@ export default async function PostPage({ params }) {
               ) : null}
             </div>
           </header>
+          <AdInArticle slot={AD_SLOTS.article} />
           <div className="prose" dangerouslySetInnerHTML={{ __html: post.html }} />
         </article>
+        <AdFeed slot={AD_SLOTS.bottom} />
+        <AdMultiplex slot={AD_SLOTS.multiplex} />
         <article className="card">
           <h2>For a scoped engagement.</h2>
           <p>A surface, a timeline, and what done looks like.</p>
@@ -58,6 +63,7 @@ export default async function PostPage({ params }) {
             <li><a href="/blog">All notes</a></li>
           </ul>
         </div>
+        <AdUnit slot={AD_SLOTS.rail} className="ad-rail" />
         <div>
           <h2>Engagement</h2>
           <p className="quiet"><a href="mailto:prxshantdangi@gmail.com?subject=Fractional%20cybersecurity">Email</a> with a surface, a timeline, and what done looks like.</p>

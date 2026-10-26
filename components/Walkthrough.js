@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { AdFeed, AdUnit } from "@/components/AdUnit";
+import { AD_SLOTS } from "@/lib/ads";
 
 function norm(value) {
   return String(value || "").trim().replace(/\s+/g, " ").toLowerCase();
@@ -278,6 +280,7 @@ export function Walkthrough({ lesson, track, year }) {
             )}
           </div>
         </article>
+        <AdFeed slot={AD_SLOTS.feed} />
       </main>
       <aside className="rail" aria-label="Steps">
         <div className="rail-scroll">
@@ -293,6 +296,7 @@ export function Walkthrough({ lesson, track, year }) {
             ))}
           </ul>
         </div>
+        <AdUnit slot={AD_SLOTS.rail} className="ad-rail" />
         <p className="quiet"><a href={backHref}>All {track.name.toLowerCase()}</a></p>
         </div>
         <p className="quiet rail-foot">© {year} Prashant Dangi</p>

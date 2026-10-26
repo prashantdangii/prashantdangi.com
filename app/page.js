@@ -1,5 +1,7 @@
 import { headers } from "next/headers";
+import { AdFeed, AdUnit } from "@/components/AdUnit";
 import { NewsletterForm } from "@/components/NewsletterForm";
+import { AD_SLOTS } from "@/lib/ads";
 import { cyberaiHref } from "@/lib/links";
 
 const FOCUS = [
@@ -41,6 +43,8 @@ export default async function HomePage() {
           <p className="after">Building and experimenting with <a href={chat}>CyberAI</a> to get the exploit. No refusal.</p>
         </article>
 
+        <AdFeed slot={AD_SLOTS.feed} />
+
         <NewsletterForm />
       </main>
 
@@ -52,6 +56,7 @@ export default async function HomePage() {
               {FOCUS.map((tag) => <span className="tag" key={tag}>{tag}</span>)}
             </div>
           </div>
+          <AdUnit slot={AD_SLOTS.rail} className="ad-rail" />
         </div>
         <p className="quiet rail-foot">© {year} Prashant Dangi</p>
       </aside>
