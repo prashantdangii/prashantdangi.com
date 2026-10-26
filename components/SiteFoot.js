@@ -1,12 +1,4 @@
 export function SiteFoot({ year }) {
   const y = year ?? new Date().getFullYear();
-  return (
-    <p className="quiet rail-foot">
-      © {y} Prashant Dangi
-      {" · "}
-      <a href="/privacy">Privacy</a>
-      {" · "}
-      <a href="/contact">Contact</a>
-    </p>
-  );
+  return <p className="quiet rail-foot">© {y} Prashant Dangi</p>;
 }
